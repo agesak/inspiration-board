@@ -34,8 +34,6 @@ const Board = ({url, boardName}) => {
 
 
   const deleteCard = (id) => {
-    console.log(id)
-    console.log(cards[0])
     const newCardList = cards.filter((cardHolder) => {
       return cardHolder.card['id'] !== id;
     });
@@ -52,8 +50,25 @@ const Board = ({url, boardName}) => {
     }
   }
 
+  const addNewCard = (card) => {
+    axios.post(url + 'boards/' + boardName + '/cards', card)
+    .then((response) => {
+      console.log(response.data)
+      const newCardList = [...cards, response.data]
+      setCards(newCardList)
+      setErrorMessage('Card Added!')
+    })
+    .catch((error) => {
+      setErrorMessage(error.message)
+    })
+
+
+
+  }
+
   return (
     <div>
+      <NewCardForm sendCard={addNewCard} />
       {errorMessage ? <div><h2>{errorMessage}</h2></div> : ''}
       {listCards(cards, deleteCard)}    
     </div>

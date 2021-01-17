@@ -27,8 +27,8 @@ const Card = ({text, emojiString, id, deleteCardCallback}) => {
 Card.propTypes = {
   text: PropTypes.string,
   emojiString: PropTypes.string,
-  deleteCardCallback: PropTypes.func,
-  id: PropTypes.number
+  id: PropTypes.number,
+  deleteCardCallback: PropTypes.func
 };
 
 export default Card;
