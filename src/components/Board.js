@@ -7,10 +7,22 @@ import Card from './Card';
 import NewCardForm from './NewCardForm';
 import CARD_DATA from '../data/card-data.json';
 
+const generateCards = CARD_DATA.cards.map((card) => {
+  if (card.Emoji) {
+    return(
+      <Card text={card.text} emojiString={card.Emoji} />
+    )
+  }
+  return(
+    <Card text={card.text} />
+  )
+
+})
+
 const Board = () => {
   return (
     <div>
-      Board
+      {generateCards}
     </div>
   )
 };
