@@ -32,16 +32,21 @@ const NewCardForm = ({sendCard}) => {
     })
   }
 
+  
+
 
   return (
-    <div>
-      <form onSubmit={onFormSubmit}>
-        <div className="new-card-form__form">
-          <input type="text" placeholder="text" name="text" onChange={onCardUpdate}/>
-          <input type="text" placeholder="emoji" name="emoji" onChange={onCardUpdate}/>
+    <div className="new-card-form">
+      <form onSubmit={onFormSubmit} className="new-card-form__form">
+        <h2 classname="new-card-form__header">Submit a Card!</h2>
+        <div>
+          {/* <input type="text" placeholder="text" name="textarea" onChange={onCardUpdate} className="new-card-form__form-textarea"/> */}
+          <textarea placeholder="text" name="textarea" onChange={onCardUpdate} className="new-card-form__form-textarea"></textarea>
+          
+          <input type="text" placeholder="emoji" name="emoji" onChange={onCardUpdate} className="new-card-form__form-textarea"/>
         </div>
         <div>
-          <input type="submit" value="Submit Card"/>
+          <input type="submit" value="Submit Card" className="new-card-form__form-button"/>
         </div>
       </form>
 
