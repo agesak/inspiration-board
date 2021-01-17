@@ -67,7 +67,7 @@ const Board = ({url, boardName}) => {
   }
 
   return (
-    <div>
+    <div className="board">
       <NewCardForm sendCard={addNewCard} />
       {errorMessage ? <div><h2>{errorMessage}</h2></div> : ''}
       {listCards(cards, deleteCard)}    

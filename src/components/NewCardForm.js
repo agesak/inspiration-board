@@ -14,8 +14,6 @@ const NewCardForm = ({sendCard}) => {
 
   const onCardUpdate = (event) => {
     const newCardFields = {...cardFields};
-    // console.log(event.target.value)
-
     newCardFields[event.target.name] = event.target.value;
     setCardFields(newCardFields);
   }
@@ -23,7 +21,6 @@ const NewCardForm = ({sendCard}) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     
-    // console.log(cardFields)
     sendCard(cardFields);
 
     setCardFields({
@@ -32,18 +29,24 @@ const NewCardForm = ({sendCard}) => {
     })
   }
 
+  const generateRadioButtons = () => {
+    return (EMOJI_LIST.map((emojiString, i) => {
+      return(
+        <label key={i}>
+        <input  name="emoji" type="radio" onChange={onCardUpdate} value={emojiString} />
+          {emojiString==='' ? 'None' : emoji.getUnicode(emojiString)}</label>
+      )
+    })
+    )
+  };
   
-
-
   return (
     <div className="new-card-form">
       <form onSubmit={onFormSubmit} className="new-card-form__form">
-        <h2 classname="new-card-form__header">Submit a Card!</h2>
+        <h2 className="new-card-form__header">Submit a Card!</h2>
         <div>
-          {/* <input type="text" placeholder="text" name="textarea" onChange={onCardUpdate} className="new-card-form__form-textarea"/> */}
-          <textarea placeholder="text" name="textarea" onChange={onCardUpdate} className="new-card-form__form-textarea"></textarea>
-          
-          <input type="text" placeholder="emoji" name="emoji" onChange={onCardUpdate} className="new-card-form__form-textarea"/>
+          <textarea placeholder="text" name="text" onChange={onCardUpdate} className="new-card-form__form-textarea"></textarea>
+          {generateRadioButtons()}
         </div>
         <div>
           <input type="submit" value="Submit Card" className="new-card-form__form-button"/>
@@ -53,6 +56,11 @@ const NewCardForm = ({sendCard}) => {
     </div>
   )
 
+};
+
+
+NewCardForm.propTypes = {
+  sendCard: PropTypes.func
 };
 
 export default NewCardForm;
