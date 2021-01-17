@@ -1,6 +1,20 @@
 {
-  "main.css": "static/css/main.a745919b.css",
-  "main.css.map": "static/css/main.a745919b.css.map",
-  "main.js": "static/js/main.80faf53e.js",
-  "main.js.map": "static/js/main.80faf53e.js.map"
+  "files": {
+    "main.css": "/agesak.github.io/inspiration-board/static/css/main.503c2219.chunk.css",
+    "main.js": "/agesak.github.io/inspiration-board/static/js/main.c870ba75.chunk.js",
+    "main.js.map": "/agesak.github.io/inspiration-board/static/js/main.c870ba75.chunk.js.map",
+    "runtime-main.js": "/agesak.github.io/inspiration-board/static/js/runtime-main.6fddd3bf.js",
+    "runtime-main.js.map": "/agesak.github.io/inspiration-board/static/js/runtime-main.6fddd3bf.js.map",
+    "static/js/2.3ffd4383.chunk.js": "/agesak.github.io/inspiration-board/static/js/2.3ffd4383.chunk.js",
+    "static/js/2.3ffd4383.chunk.js.map": "/agesak.github.io/inspiration-board/static/js/2.3ffd4383.chunk.js.map",
+    "index.html": "/agesak.github.io/inspiration-board/index.html",
+    "static/css/main.503c2219.chunk.css.map": "/agesak.github.io/inspiration-board/static/css/main.503c2219.chunk.css.map",
+    "static/js/2.3ffd4383.chunk.js.LICENSE.txt": "/agesak.github.io/inspiration-board/static/js/2.3ffd4383.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6fddd3bf.js",
+    "static/js/2.3ffd4383.chunk.js",
+    "static/css/main.503c2219.chunk.css",
+    "static/js/main.c870ba75.chunk.js"
+  ]
 }
