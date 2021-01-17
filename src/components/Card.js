@@ -4,18 +4,21 @@ import emoji from 'emoji-dictionary';
 
 import './Card.css';
 
-const Card = ({text, emojiString}) => {
+const Card = ({text, emojiString, id, deleteCardCallback}) => {
+
   if (emojiString) {
     return (
       <div className="card">
         <span>{text}</span>
         <span>{emoji.getUnicode(emojiString)}</span>
+        <button onClick={() => deleteCardCallback(id)}>Delete</button>
       </div>
     )
   }
   return (
     <div className="card">
       <span>{text}</span>
+      <button onClick={() => deleteCardCallback(id)}>Delete</button>
     </div>
   )
 
@@ -23,7 +26,9 @@ const Card = ({text, emojiString}) => {
 
 Card.propTypes = {
   text: PropTypes.string,
-  emojiString: PropTypes.string
+  emojiString: PropTypes.string,
+  deleteCardCallback: PropTypes.func,
+  id: PropTypes.number
 };
 
 export default Card;
